@@ -10,7 +10,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Left Side Of Navbar -->
       <ul class="navbar-nav mr-auto">
-        
+        <li class="nav-item">
+          <router-link to="/dashboard" class="nav-link">
+            Inicio
+          </router-link>
+        </li>
       </ul>
       
       <!-- Right Side Of Navbar -->
@@ -35,9 +39,9 @@
           </a>
           
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a href="#" class="dropdown-item">
+            <router-link to="/profile" class="dropdown-item">
               {{ __('Profile') }}
-            </a>
+            </router-link>
 
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById ('logout-form').submit();">
               {{ __('Logout') }}

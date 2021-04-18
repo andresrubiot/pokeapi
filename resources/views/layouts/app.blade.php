@@ -26,7 +26,8 @@
     @include('layouts.nav')
     
     <main class="container-fluid py-4">
-      @yield('content')
+      {{-- @yield('content') --}}
+      <router-view></router-view>
     </main>
   </div>
 </body>
