@@ -7,6 +7,7 @@
           <div class="col mb-4" v-for="(pokemon, index) in pokemons" :key="'pokemon' + index">
             <div class="card text-center">
               <div class="card-body">
+                <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + (Math.round(index+1)) + '.png'" width="150" class="p-3" :alt="pokemon.name">
                 <h5 class="card-title">{{ pokemon.name }}</h5>
                 <p class="card-text text-muted">
                   Info
@@ -32,6 +33,7 @@ export default {
     getPokemons() {
       axios.get('https://pokeapi.co/api/v2/pokemon/')
       .then( res => {
+        console.log(res.data.results);
         res.data.results.forEach(pokemon => {
           this.pokemons.push(pokemon);
         })
