@@ -10,12 +10,12 @@ use App\Models\User;
 class UsersCanSeePokemonsTest extends DuskTestCase
 {
   use DatabaseMigrations;
-
+  
   /** @test */
   public function users_can_see_pokemons_at_home()
   {
     $user = User::factory()->create();
-
+    
     $this->browse(function (Browser $browser) use ($user) {
       $browser->loginAs($user)
       ->visit('/home')
@@ -24,6 +24,27 @@ class UsersCanSeePokemonsTest extends DuskTestCase
       ->assertSee('bulbasaur')
       ->assertSee('Info')
       ->assertSee('raticate');
+    });
+  }
+  
+  /** @test */
+  public function users_can_load_more_pokemons()
+  {
+    $user = User::factory()->create();
+    
+    $this->browse(function (Browser $browser) use ($user) {
+      $browser->loginAs($user)
+      ->visit('/home')
+      ->assertSee('Pokemon list')
+      ->waitForText('bulbasaur')
+      ->assertSee('bulbasaur')
+      ->assertSee('Info')
+      ->assertSee('raticate')
+      ->assertSee('More')
+      ->press('@more')
+      ->waitForText('spearow')
+      ->assertSee('spearow')
+      ->assertSee('wigglytuff');
     });
   }
 }
