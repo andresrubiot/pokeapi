@@ -108,6 +108,10 @@
                 <button type="submit" dusk="register-btn" class="btn btn-primary">
                   {{ __('Register') }}
                 </button>
+                
+                <a class="btn btn-link" href="{{ route('login') }}">
+                  {{ __('login') }}
+                </a>
               </div>
             </div>
           </form>
