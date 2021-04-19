@@ -15,6 +15,14 @@ Vue.mixin(auth);
 // Vue progressbar
 import VueProgressBar from 'vue-progressbar'
 
+// Vform
+import { Form, HasError, AlertError } from 'vform'
+
+window.Form = Form;
+
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
+
 Vue.use(VueProgressBar, {
   color: 'rgb(55, 97, 168)',
   failedColor: 'red',
@@ -23,6 +31,7 @@ Vue.use(VueProgressBar, {
 
 // Vue router
 import VueRouter from 'vue-router'
+import Vue from 'vue';
 Vue.use(VueRouter)
 
 let routes = [
@@ -38,6 +47,8 @@ const router = new VueRouter({
 Vue.filter('capitalize', function(text) {
   return text.charAt(0).toUpperCase() + text.slice(1)
 })
+
+window.Fire = new Vue();
 
 /**
 * The following block of code may be used to automatically register your
