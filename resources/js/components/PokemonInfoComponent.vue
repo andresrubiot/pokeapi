@@ -5,7 +5,7 @@
         <span aria-hidden="true">&times;</span>
       </button>
 
-      <h1 class="text-center border-bottom p-2">{{pokemon.name}} info</h1>
+      <h1 class="text-center border-bottom p-2">{{pokemon.name | capitalize}} info</h1>
 
       <div class="row no-gutters">
         <div class="col-md-4 d-flex align-items-center px-3 border-right">
@@ -14,14 +14,14 @@
         
         <div class="col-md-8">
           <div class="card-body">
-            <h3 class="card-title font-weight-bold border-bottom">{{ pokemon.name }}</h3>
+            <h3 class="card-title font-weight-bold border-bottom">{{ pokemon.name | capitalize }}</h3>
             <div class="card-text"><span class="font-weight-bold">Experience</span> {{ pokemon.base_experience }}</div>
             <div class="card-text"><span class="font-weight-bold">Height</span> {{ pokemon.height }}</div>
             <div class="card-text"><span class="font-weight-bold">Weight</span> {{ pokemon.weight }}</div>
 
             <div class="pt-3">
               <h3 class="card-title font-weight-bold border-bottom">Pokemon abilities</h3>
-              <span v-for="(value, index) in pokemon.abilities" :key="index" class="px-2">{{ value.ability.name }}</span>
+              <span v-for="(value, index) in pokemon.abilities" :key="index" class="px-2">{{ value.ability.name | capitalize }}</span>
             </div>
           </div>
         </div>

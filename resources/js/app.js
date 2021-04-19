@@ -22,6 +22,10 @@ const router = new VueRouter({
   routes // short for `routes: routes`
 })
 
+Vue.filter('capitalize', function(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1)
+})
+
 /**
 * The following block of code may be used to automatically register your
 * Vue components. It will recursively scan this directory for the Vue

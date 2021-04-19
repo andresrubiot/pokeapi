@@ -20,11 +20,11 @@ class UsersCanSeePokemonInfoTest extends DuskTestCase
       $browser->loginAs($user)
       ->visit('/home')
       ->assertSee('Pokemon list')
-      ->waitForText('bulbasaur')
-      ->assertSee('bulbasaur')
+      ->waitForText('Bulbasaur')
+      ->assertSee('Bulbasaur')
       ->press('@bulbasaur-info')
-      ->waitForText('bulbasaur info')
-      ->assertSee('bulbasaur info');
+      ->waitForText('Bulbasaur info')
+      ->assertSee('Bulbasaur info');
     });
   }
 }

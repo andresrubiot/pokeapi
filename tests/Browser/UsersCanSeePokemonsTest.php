@@ -20,10 +20,10 @@ class UsersCanSeePokemonsTest extends DuskTestCase
       $browser->loginAs($user)
       ->visit('/home')
       ->assertSee('Pokemon list')
-      ->waitForText('bulbasaur')
-      ->assertSee('bulbasaur')
+      ->waitForText('Bulbasaur')
+      ->assertSee('Bulbasaur')
       ->assertSee('Info')
-      ->assertSee('raticate');
+      ->assertSee('Raticate');
     });
   }
   
@@ -36,15 +36,15 @@ class UsersCanSeePokemonsTest extends DuskTestCase
       $browser->loginAs($user)
       ->visit('/home')
       ->assertSee('Pokemon list')
-      ->waitForText('bulbasaur')
-      ->assertSee('bulbasaur')
+      ->waitForText('Bulbasaur')
+      ->assertSee('Bulbasaur')
       ->assertSee('Info')
-      ->assertSee('raticate')
+      ->assertSee('Raticate')
       ->assertSee('More')
       ->press('@more')
-      ->waitForText('spearow')
-      ->assertSee('spearow')
-      ->assertSee('wigglytuff');
+      ->waitForText('Spearow')
+      ->assertSee('Spearow')
+      ->assertSee('Wigglytuff');
     });
   }
 }
