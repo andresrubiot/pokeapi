@@ -56,10 +56,10 @@ export default {
       axios.get(this.pokemonUrl)
       .then( res => {
         this.pokemon = res.data;
-        console.log(this.pokemon);
         this.show = true;
       })
       .catch( err => {
+        this.$Progress.fail();
         console.log(err);
       })
     },
@@ -70,7 +70,12 @@ export default {
   },
 
   created() {
+    this.$Progress.start();
     this.getPokemon();
+  },
+
+  mounted() {
+    this.$Progress.finish();
   }
 }
 </script>

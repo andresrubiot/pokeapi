@@ -8,6 +8,15 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+// Vue progressbar
+import VueProgressBar from 'vue-progressbar'
+
+Vue.use(VueProgressBar, {
+  color: 'rgb(55, 97, 168)',
+  failedColor: 'red',
+  thickness: '10px'
+})
+
 // Vue router
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)

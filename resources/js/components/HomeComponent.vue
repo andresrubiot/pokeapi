@@ -34,6 +34,10 @@ export default {
       this.pokemonUrl = '';
       this.showPokemon = false;
     }
+  },
+
+  created() {
+    this.$Progress.start();
   }
 }
 </script>

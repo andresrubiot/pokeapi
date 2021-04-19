@@ -28,6 +28,7 @@
     <main class="container-fluid py-4">
       @yield('content')
       <router-view></router-view>
+      <vue-progress-bar></vue-progress-bar>
     </main>
   </div>
 </body>

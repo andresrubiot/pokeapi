@@ -54,19 +54,27 @@ export default {
         })
       })
       .catch( err => {
+        this.$Progress.fail();
         console.log(err);
       })
     },
 
     getNextPokemons() {
+      this.$Progress.start();
       axios.get(this.nextUrl)
       .then( res => {
         this.nextUrl = res.data.next;
 
         res.data.results.forEach(pokemon => {
           this.pokemons.push(pokemon);
-        })
-      });
+        });
+
+        this.$Progress.finish();
+      })
+      .catch( err => {
+        this.$Progress.fail();
+        console.log(err);
+      })
     },
 
     viewPokemon(url) {
@@ -75,6 +83,7 @@ export default {
   },
 
   created() {
+    this.$Progress.finish();
     this.getPokemons();
   }
 }
