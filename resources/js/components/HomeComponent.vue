@@ -1,6 +1,7 @@
 <template>
   <div class="container" v-if="isAuthenticated">
     <h1>Pokemon list</h1>
+    <search-component :url="url" @viewPokemon="viewPokemon"></search-component>
     <pokemon-list :url="url" :image="image" @viewPokemon="viewPokemon"></pokemon-list>
     <pokemon-info v-if="showPokemon" :pokemonUrl="pokemonUrl" :image="image" :showPokemon="showPokemon" @close="close">
     </pokemon-info>

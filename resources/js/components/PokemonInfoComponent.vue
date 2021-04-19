@@ -1,5 +1,5 @@
 <template>
-  <div class="pokeInfo">
+  <div class="pokeInfo" v-if="pokemon">
     <div class="card" v-if="show">
       <button type="button" class="close text-right pt-2 pr-2" aria-label="Close" @click="close">
         <span aria-hidden="true">&times;</span>
@@ -23,6 +23,28 @@
               <h3 class="card-title font-weight-bold border-bottom">Pokemon abilities</h3>
               <span v-for="(value, index) in pokemon.abilities" :key="index" class="px-2">{{ value.ability.name | capitalize }}</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pokeInfo" v-else>
+    <div class="card">
+      <button type="button" class="close text-right pt-2 pr-2" aria-label="Close" @click="close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <h1 class="text-center border-bottom p-2">info</h1>
+
+      <div class="row no-gutters">
+        <div class="col-md-4 d-flex align-items-center px-3 border-right">
+          <img src="images/pokeapi.png" width="100%">
+        </div>
+        
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 class="card-title font-weight-bold border-bottom">Pokemon not found!!!</h3>
           </div>
         </div>
       </div>
@@ -60,6 +82,7 @@ export default {
       })
       .catch( err => {
         this.$Progress.fail();
+        this.pokemon = '';
         console.log(err);
       })
     },
