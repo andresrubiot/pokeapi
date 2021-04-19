@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="row row-cols-1 row-cols-md-4">
         <div class="col mb-4" v-for="(pokemon, index) in pokemons" :key="'pokemon' + index">
-          <div class="card text-center">
+          <div class="card text-center border-0 shadow-lg">
             <div class="card-body">
               <img :src="image + (Math.round(index+1)) + '.png'" width="150" class="p-3" :alt="pokemon.name">
               <h5 class="card-title">{{ pokemon.name | capitalize }}</h5>
