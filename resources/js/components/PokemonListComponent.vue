@@ -7,9 +7,7 @@
             <div class="card-body">
               <img :src="image + (Math.round(index+1)) + '.png'" width="150" class="p-3" :alt="pokemon.name">
               <h5 class="card-title">{{ pokemon.name }}</h5>
-              <p class="card-text text-muted">
-                Info
-              </p>
+              <button class="btn btn-secondary btn-lin" :dusk="pokemon.name+'-info'" @click="viewPokemon(pokemon.url)">Info</button>
             </div>
           </div>
         </div>
@@ -69,6 +67,10 @@ export default {
           this.pokemons.push(pokemon);
         })
       });
+    },
+
+    viewPokemon(url) {
+      this.$emit('viewPokemon', url);
     }
   },
 

@@ -34,6 +34,7 @@ const router = new VueRouter({
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('pokemon-list', require('./components/PokemonListComponent.vue').default);
+Vue.component('pokemon-info', require('./components/PokemonInfoComponent.vue').default);
 
 /**
 * Next, we will create a fresh Vue application instance and attach it to
