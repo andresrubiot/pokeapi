@@ -8,6 +8,10 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+// Mixin auth
+import auth from './mixins/auth';
+Vue.mixin(auth);
+
 // Vue progressbar
 import VueProgressBar from 'vue-progressbar'
 

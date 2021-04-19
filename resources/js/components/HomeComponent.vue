@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="isAuthenticated">
     <h1>Pokemon list</h1>
     <pokemon-list :url="url" :image="image" @viewPokemon="viewPokemon"></pokemon-list>
     <pokemon-info v-if="showPokemon" :pokemonUrl="pokemonUrl" :image="image" :showPokemon="showPokemon" @close="close">
